@@ -1,0 +1,27 @@
+.card-deck .card {
+  margin: 1px;
+  padding: 2px;
+}
+.card-title {
+  font-size: 0.8rem;
+}
+.card-img {
+  height: 200px;
+}
+.card-img-top {
+  margin: auto;
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+.card-gag {
+  border: none;
+}
+.search-result-quotes {
+  font-size: 1em;
+  color: #ccc;
+}
+.content {
+  padding-top: 10px;
+}
