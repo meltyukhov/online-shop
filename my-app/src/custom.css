@@ -25,3 +25,13 @@
 .content {
   padding-top: 10px;
 }
+.router-link {
+  color: inherit;
+}
+.router-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+.specs {
+  margin: 10px 0 10px 0;
+}

@@ -4,9 +4,10 @@ import Home from './Home';
 import Phones from './Phones';
 import Laptops from './Laptops';
 import Desktops from './Desktops';
-import Accessories from './Accessories';
+//import Accessories from './Accessories';
 import Search from './Search';
-import Phone from './Phone';
+//import Phone from './Phone';
+import Product from './Product';
 
 
 class Content extends React.Component {
@@ -15,11 +16,12 @@ class Content extends React.Component {
         <div className="container content">
           <Route exact path="/" component={Home} />
           <Route path="/phones" component={Phones} />
-          <Route path="/phone" component={Phone} />
+          {/*<Route path="/phone" component={Phone} />*/}
           <Route path="/laptops" component={Laptops} />
           <Route path="/desktops" component={Desktops} />
-          <Route path="/accessories" component={Accessories} />
+          {/*<Route path="/accessories" component={Accessories} />*/}
           <Route path="/search" component={Search} />
+          <Route path="/product" component={Product} />
         </div>
     );
   }

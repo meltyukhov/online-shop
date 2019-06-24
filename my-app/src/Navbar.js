@@ -41,9 +41,9 @@ class Navbar extends React.Component {
   						<li className="nav-item">
   							<Link className="nav-link" to="/desktops">Компьютеры</Link>
   						</li>
-  						<li className="nav-item">
+  						{/*<li className="nav-item">
   							<Link className="nav-link" to="/accessories">Аксессуары</Link>
-  						</li>
+  						</li>*/}
   					</ul>
   					<form className="form-inline my-2 my-lg-0">
   						<input className="form-control mr-sm-2" type="search" placeholder="Поиск..." value={this.state.query} onChange={this.handleChange} />

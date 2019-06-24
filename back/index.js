@@ -26,6 +26,11 @@ app.get('/get_list', (req, res) => {
     db.getProducts(type).then((rows) => res.json(rows));
 });
 
+app.get('/get_one', (req, res) => {
+  //const id = req.query.id;
+  db.getOne(req.query.id).then((product) => res.json(product));
+  //db.getOne(req.query.id);
+});
 
 app.get('/search', (req, res) => {
   const query = req.query.query;

@@ -277,8 +277,47 @@ const search = (query) => {
   return promise;
 }
 
+const detectType = (id) => {
+  const types = {
+    'phones': Phone,
+    'laptops': Laptop,
+    'desktops': Desktop
+  };
+  const promise = new Promise((resolve) => {
+    Object.keys(types).forEach((type) => {
+      types[type].count({ where: { id: id } })
+        .then(n => {
+          if (n > 0) resolve(types[type]);
+        });
+    });
+  });
+  return promise;
+}
+
+const getOne = (id) => {
+  const promise = new Promise((resolve) => {
+    detectType(id).then(Model => {
+      Model.findAll({
+        include: [ Product ],
+        where: { id: id }
+      }).then(res => {
+        res = res[0].dataValues;
+        let productObj = Object.assign(res.product.dataValues, res);
+        delete productObj.product;
+        productObj.type = Model.name;
+        encode(productObj)
+        //console.log(productObj);
+        resolve(productObj);
+      });
+      //console.log(Model.name);
+    });
+  });
+  return promise;
+}
+
 module.exports = {
   getAll: getAll,
   getProducts: getProducts,
+  getOne: getOne,
   search: search
 }

@@ -31,7 +31,7 @@ class List extends React.Component {
   }
 
   myFetch() {
-    fetch("http://127.0.0.1.:5000/get_list?" + this.serialize(this.props.request))
+    fetch("http://127.0.0.1:5000/get_list?" + this.serialize(this.props.request))
       .then(res => res.json())
       .then(
         (result) => {
